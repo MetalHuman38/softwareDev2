@@ -1,0 +1,3 @@
+C:\SD2CW\softwareDev2\x64\Debug\softwareDev2.exe
+C:\SD2CW\softwareDev2\x64\Debug\softwareDev2.exe.lastcodeanalysissucceeded
+C:\SD2CW\softwareDev2\x64\Debug\NativeCodeAnalysis.read.1.tlog

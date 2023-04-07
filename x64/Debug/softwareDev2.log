@@ -1,0 +1,4 @@
+﻿  main.cpp
+C:\SD2CW\softwareDev2\src\main.cpp(244,10): warning C4244: 'return': conversion from '__int64' to 'double', possible loss of data
+  softwareDev2.vcxproj -> C:\SD2CW\softwareDev2\x64\Debug\softwareDev2.exe
+C:\SD2CW\softwareDev2\src\main.cpp(372): warning C26495: Variable 'Checkout_sys::types' is uninitialized. Always initialize a member variable (type.6).
