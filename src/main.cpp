@@ -48,6 +48,7 @@ void get_customer_name()
 			std::string shoppers_name;      // Stores shoppers name 
 			std::cout <<"\n"<<"\t"<< "Please Enter your first name and last name: ";
 			std::getline(std::cin, shoppers_name);
+			transform(shoppers_name.begin(), shoppers_name.end(), shoppers_name.begin(), ::toupper);
 			std::cout << "\n" << "\t" << "Customer name: " << shoppers_name << std::endl;
 			
 
@@ -89,6 +90,7 @@ void get_customer_address()
 		std::string shoppers_address;  // Stores shoppers address
 		std::cout << "\n" << "\t" << "Enter your address: ";
 		std::getline(std::cin, shoppers_address);
+		transform(shoppers_address.begin(), shoppers_address.end(), shoppers_address.begin(), ::toupper);
 		std::cout << "\n" << "\t" << "Customer address: " << shoppers_address << std::endl;
 
 		get_valid_input = true;
@@ -121,11 +123,12 @@ bool isValidPostcode(std::string postcode) // Bool function to validate if Post 
 {
 	do
 	{
-		std::regex pattern("^[A-Z]{1,2}[0-9]{1,2}[A-Z]?(\\s*[0-9][A-Z]{1,2})?$");
+		//std::regex pattern("^[A-Z]{1,2}[0-9]{1,2}[A-Z]?(\\s*[0-9][A-Z]{1,2})?$");
+		std::regex pattern("^[a-zA-Z]{1,2}[0-9]{1,2}[a-zA-Z]?(\\s*[0-9][a-zA-Z]{1,2})?$");
 		std::string post_code;        // stores shoppers post code
 		std::cout << "\n" << "\t" << "Enter your post code: ";
 		std::getline(std::cin, postcode);
-
+		transform(postcode.begin(), postcode.end(), postcode.begin(), ::toupper);
 		bool match = std::regex_match(postcode, pattern);
 
 		if (!match)
@@ -343,11 +346,12 @@ void list_of_items() // Function displays Item and price
 		std::cout << "\n" << "\t" << "Enter the quantity of Bread purchased: ";
 		std::cin >> b_read;
 		
+		
 		std::cout << "\n" << "\t" << "====Total Item Purchased=======" << std::endl;
-		std::cout << "\n" << "\t" << bakedbeans << "x" << " Baked Beans.";
-		std::cout << "\n" << "\t" << pop_corn << "x" << " Popcorn.";
-		std::cout << "\n" << "\t" << evaporatedmilk << "x" << " Evaporated milk.";
-		std::cout << "\n" << "\t" << b_read << "x" << " Bread.";
+		std::cout << "\n" << "\t" << bakedbeans << "x" << " BAKED BEANS.";
+		std::cout << "\n" << "\t" << pop_corn << "x" << " POPCORN.";
+		std::cout << "\n" << "\t" << evaporatedmilk << "x" << " EVAPORATED MILK.";
+		std::cout << "\n" << "\t" << b_read << "x" << " BREAD.";
 
 		int subtotal(bakedbeans + pop_corn + evaporatedmilk + b_read);
 		std::cout << "\n" << "\t" << "Total Quantity of Item purchased :" << subtotal << " Items" << std::endl;
@@ -358,10 +362,10 @@ void list_of_items() // Function displays Item and price
 		std::cout << "\n" << "\t" << "Sales VAT: " << salesTax << std::endl;
 
 		std::cout << "\n" << "\t" << "Total cost: " << ((baked_beans * bakedbeans) + (popcorn * pop_corn) + (evaporated_milk * evaporatedmilk) + (bread * b_read) + salesTax) << std::endl;
-		
-		if (!(std::cin >> bakedbeans >> pop_corn >> evaporatedmilk >> b_read))
+		if (!(std::cin)) //>> bakedbeans >> pop_corn >> evaporatedmilk >> b_read))
 		{
 			std::cout << "\n" << "\t" << "Invalid! Please Use only Numeric Value! ";
+			std::cin >> bakedbeans >> pop_corn >> evaporatedmilk >> b_read;
 			std::cin.clear();
 			std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 		}
@@ -375,16 +379,16 @@ void list_of_items() // Function displays Item and price
 int main(int arg, char** argv)
 {
 	Checkout_sys sys;
-	sys.system_check();
-	sys.get_customer_name();
-	sys.get_customer_address();
-	std::string post_code = "SW15 4JD";
-	sys.isValidPostcode(post_code);
-	sys.prompt_for_payment();
-	std::string card_ex_date = "11/12/2023";
-	sys.isValid_card_expiry_date(card_ex_date);
-	std::string card_sec_code = "234";
-	sys.isValidcardSecret_code(card_sec_code);
+	//sys.system_check();
+	//sys.get_customer_name();
+	//sys.get_customer_address();
+	//std::string post_code = "SW15 4JD";
+	//sys.isValidPostcode(post_code);
+	//sys.prompt_for_payment();
+	//std::string card_ex_date = "11/12/2023";
+	//sys.isValid_card_expiry_date(card_ex_date);
+	//std::string card_sec_code = "234";
+	//sys.isValidcardSecret_code(card_sec_code);
 	sys.list_of_items();
     sys.Calculate_item_quantity();
 

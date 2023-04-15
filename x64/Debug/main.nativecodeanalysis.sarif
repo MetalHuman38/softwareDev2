@@ -16,9 +16,9 @@
                   "uri": "file:///C:/SD2CW/softwareDev2/src/main.cpp"
                 },
                 "region": {
-                  "startLine": 372,
+                  "startLine": 376,
                   "startColumn": 1,
-                  "endLine": 372,
+                  "endLine": 376,
                   "endColumn": 1
                 }
               },
@@ -40,7 +40,7 @@
         "driver": {
           "name": "PREfast",
           "fullName": "PREfast Code Analysis",
-          "version": "14.35.32216.1",
+          "version": "14.35.32217.1",
           "informationUri": "https://aka.ms/cpp/ca"
         }
       },
@@ -59,7 +59,7 @@
             "resultFile"
           ],
           "hashes": {
-            "sha-256": "f33f6152538f55e0aa3d28a1eb0b8a79bc8fb43c5fd851bf3a56e891cd172763"
+            "sha-256": "264fa42b9e850422304badfabd73d11f751b0cdc607231d70c2020d47b939a2a"
           }
         },
         {
