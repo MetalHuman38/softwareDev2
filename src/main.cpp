@@ -335,8 +335,11 @@ void list_of_items() // Function displays Item and price
 		evaporated_milk = 1.15, bread = 2.34;
 	int bakedbeans, pop_corn, evaporatedmilk, b_read;
 
-	do
+	bool alphabet = false;
+
+	while(!(alphabet))
 	{
+
 		std::cout << "\n" << "\t" << "Enter the quantity of Baked Beans purchased: ";
 		std::cin >> bakedbeans;
 		std::cout << "\n" << "\t" << "Enter the quantity of Popcorn purchased: ";
@@ -346,30 +349,35 @@ void list_of_items() // Function displays Item and price
 		std::cout << "\n" << "\t" << "Enter the quantity of Bread purchased: ";
 		std::cin >> b_read;
 		
-		
-		std::cout << "\n" << "\t" << "====Total Item Purchased=======" << std::endl;
-		std::cout << "\n" << "\t" << bakedbeans << "x" << " BAKED BEANS.";
-		std::cout << "\n" << "\t" << pop_corn << "x" << " POPCORN.";
-		std::cout << "\n" << "\t" << evaporatedmilk << "x" << " EVAPORATED MILK.";
-		std::cout << "\n" << "\t" << b_read << "x" << " BREAD.";
-
-		int subtotal(bakedbeans + pop_corn + evaporatedmilk + b_read);
-		std::cout << "\n" << "\t" << "Total Quantity of Item purchased :" << subtotal << " Items" << std::endl;
-
-		const double vat{ 0.20 };
-		const double salesTax(subtotal * vat);
-
-		std::cout << "\n" << "\t" << "Sales VAT: " << salesTax << std::endl;
-
-		std::cout << "\n" << "\t" << "Total cost: " << ((baked_beans * bakedbeans) + (popcorn * pop_corn) + (evaporated_milk * evaporatedmilk) + (bread * b_read) + salesTax) << std::endl;
-		if (!(std::cin)) //>> bakedbeans >> pop_corn >> evaporatedmilk >> b_read))
+		if (std::cin)
 		{
-			std::cout << "\n" << "\t" << "Invalid! Please Use only Numeric Value! ";
-			std::cin >> bakedbeans >> pop_corn >> evaporatedmilk >> b_read;
+			std::cout << "\n" << "\t" << "====Total Item Purchased=======" << std::endl;
+			std::cout << "\n" << "\t" << bakedbeans << "x" << " BAKED BEANS.";
+			std::cout << "\n" << "\t" << pop_corn << "x" << " POPCORN.";
+			std::cout << "\n" << "\t" << evaporatedmilk << "x" << " EVAPORATED MILK.";
+			std::cout << "\n" << "\t" << b_read << "x" << " BREAD.";
+
+			int subtotal(bakedbeans + pop_corn + evaporatedmilk + b_read);
+			std::cout << "\n" << "\t" << "Total Quantity of Item purchased :" << subtotal << " Items" << std::endl;
+
+			const double vat{ 0.20 };
+			const double salesTax(subtotal * vat);
+
+			std::cout << "\n" << "\t" << "Sales VAT: " << salesTax << std::endl;
+
+			std::cout << "\n" << "\t" << "Total cost: " << ((baked_beans * bakedbeans) + (popcorn * pop_corn) + (evaporated_milk * evaporatedmilk) + (bread * b_read) + salesTax) << std::endl;
+
+			alphabet = true;
+		}
+		
+		else 
+		{
 			std::cin.clear();
 			std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+			std::cout << "\n" << "\t" << "Invalid! Please Use only Numeric Value! ";
+			
 		}
-	} while (!(std::cin));
+	} 
 
      return 0;
 }

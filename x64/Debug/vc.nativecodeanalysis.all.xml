@@ -2,14 +2,14 @@
     <SFA>
       <FILEPATH>C:\SD2CW\softwareDev2\src\</FILEPATH>
       <FILENAME>main.cpp</FILENAME>
-      <LINE>376</LINE>
+      <LINE>384</LINE>
       <COLUMN>0</COLUMN>
     </SFA>
     <DEFECTCODE>26495</DEFECTCODE>
     <DESCRIPTION>Variable 'Checkout_sys::types' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
     <FUNCTION>Checkout_sys::{ctor}</FUNCTION>
     <DECORATED>??0Checkout_sys@@QEAA@XZ</DECORATED>
-    <FUNCLINE>376</FUNCLINE>
+    <FUNCLINE>384</FUNCLINE>
     <ADDITIONALINFO>
       <targetSymbol>Checkout_sys::types</targetSymbol>
     </ADDITIONALINFO>
