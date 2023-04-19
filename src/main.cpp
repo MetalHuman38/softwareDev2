@@ -14,6 +14,10 @@
 #include <stdio.h>
 #include <ctime>
 #include <cctype>
+#include <cstring>
+#include <iomanip>
+
+
 
 
 
@@ -27,7 +31,20 @@ private:
 	int sum = 0;
 	int count = 0;
 	unsigned long long divisor = 10;
-	char types[20];
+	const char* str = "Card Type";
+	char types [250];
+	std::string shoppers_name;
+	std::string shoppers_address;
+	std::string postcode;
+	std::string card_secret_code;
+	std::string card_Expiry_date;
+	double baked_beans = 1.20, popcorn = 0.80,
+		evaporated_milk = 1.15, bread = 2.34; 
+	float vat = 0.2, vat_amount, salesTax = 0, totalCost,finalCost, totalTax = 0;
+	int bakedbeans = 0, pop_corn = 0, evaporatedmilk = 0, b_read = 0;
+	std::ofstream reciept;
+	
+	
 
 
 public:
@@ -45,7 +62,6 @@ void get_customer_name()
 	bool valid_input;
 		do
 		{
-			std::string shoppers_name;      // Stores shoppers name 
 			std::cout <<"\n"<<"\t"<< "Please Enter your first name and last name: ";
 			std::getline(std::cin, shoppers_name);
 			transform(shoppers_name.begin(), shoppers_name.end(), shoppers_name.begin(), ::toupper);
@@ -54,8 +70,7 @@ void get_customer_name()
 
 			valid_input = true;
 		
-			// std::cout <<"\n"<<"\t"<< "Customer name: " << shoppers_name << std::endl;
-			
+
 			for (std::size_t i{}; i < shoppers_name.length() && valid_input; ++i)
 			{
 				if (!(std::isalpha(static_cast<unsigned char>(shoppers_name[i])) ||
@@ -63,7 +78,7 @@ void get_customer_name()
 					
 				{
 					valid_input = false;
-					std::cout <<"\n"<<"\t"<<"Invalid! Type in your first name followed by space and last name only!" << "\n";
+					std::cout <<"\n"<<"\t"<<"Error! Name must not include numbers or symbols..." << "\n";
 					std::cout << "\n" << "\t" << "Press Enter to continue.......";
 					std::cin.clear();
 					std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
@@ -87,7 +102,7 @@ void get_customer_address()
 	bool get_valid_input;
 	do
 	{
-		std::string shoppers_address;  // Stores shoppers address
+		
 		std::cout << "\n" << "\t" << "Enter your address: ";
 		std::getline(std::cin, shoppers_address);
 		transform(shoppers_address.begin(), shoppers_address.end(), shoppers_address.begin(), ::toupper);
@@ -119,13 +134,12 @@ void get_customer_address()
 }
 
 
-bool isValidPostcode(std::string postcode) // Bool function to validate if Post Code is valid or not
+bool isValidPostcode() // Bool function to validate if Post Code is valid or not
 {
 	do
 	{
 		//std::regex pattern("^[A-Z]{1,2}[0-9]{1,2}[A-Z]?(\\s*[0-9][A-Z]{1,2})?$");
 		std::regex pattern("^[a-zA-Z]{1,2}[0-9]{1,2}[a-zA-Z]?(\\s*[0-9][a-zA-Z]{1,2})?$");
-		std::string post_code;        // stores shoppers post code
 		std::cout << "\n" << "\t" << "Enter your post code: ";
 		std::getline(std::cin, postcode);
 		transform(postcode.begin(), postcode.end(), postcode.begin(), ::toupper);
@@ -244,21 +258,21 @@ double prompt_for_payment () // Function gets customers creditcard number and va
 		}
 
 		std::cout << types;
-		return creditCardNumber;
+		return 0;
 	}
 
 	std::cout << std::endl;
 
 }
 
-bool isValid_card_expiry_date(std::string card_Expiry_date) 
+bool isValid_card_expiry_date() 
 {
 	do
 	{
 		std::regex patternn("^([0]?[1-9]|[1|2][0-9]|[3][0|1])[./-]([0]?[1-9]|[1][0-2])[./-]([0-9]{4}|[0-9]{2})$");
 		
 		//("^(((0[1-9]|[12][0-9]|30)[-/]?(0[13-9]|1[012])|31[-/]?(0[13578]|1[02])|(0[1-9]|1[0-9]|2[0-8])[-/]?02)[-/]?[0-9]{4}|29[-/]?02[-/]?([0-9]{2}(([2468][048]|[02468][48])|[13579][26])|([13579][26]|[02468][048]|0[0-9]|1[0-6])00))$");
-		std::string card_Expiry_date;
+		
 		std::cout << "\n" << "\t" << "Enter Credit Card Expiry Date in DD/MM/YYYY format: ";
 		std::cin >> card_Expiry_date;
 		//std::getline(std::cin, card_Expiry_date);
@@ -285,7 +299,7 @@ bool isValid_card_expiry_date(std::string card_Expiry_date)
 	} while(true);
 }
 
-bool  isValidcardSecret_code(std::string card_secret_code)
+bool  isValidcardSecret_code()
 {
 	do
 	{
@@ -331,15 +345,12 @@ void list_of_items() // Function displays Item and price
  double Calculate_item_quantity() // Function calculates Items selected.
 {
 
-	const double baked_beans = 1.20, popcorn = 0.80,
-		evaporated_milk = 1.15, bread = 2.34;
-	int bakedbeans, pop_corn, evaporatedmilk, b_read;
+	
 
 	bool alphabet = false;
 
-	while(!(alphabet))
+	do
 	{
-
 		std::cout << "\n" << "\t" << "Enter the quantity of Baked Beans purchased: ";
 		std::cin >> bakedbeans;
 		std::cout << "\n" << "\t" << "Enter the quantity of Popcorn purchased: ";
@@ -348,39 +359,114 @@ void list_of_items() // Function displays Item and price
 		std::cin >> evaporatedmilk;
 		std::cout << "\n" << "\t" << "Enter the quantity of Bread purchased: ";
 		std::cin >> b_read;
-		
-		if (std::cin)
+
+	
+		if (!(std::cin.fail()))
 		{
-			std::cout << "\n" << "\t" << "====Total Item Purchased=======" << std::endl;
-			std::cout << "\n" << "\t" << bakedbeans << "x" << " BAKED BEANS.";
-			std::cout << "\n" << "\t" << pop_corn << "x" << " POPCORN.";
-			std::cout << "\n" << "\t" << evaporatedmilk << "x" << " EVAPORATED MILK.";
-			std::cout << "\n" << "\t" << b_read << "x" << " BREAD.";
+			if (bakedbeans >= 1 && pop_corn >= 1 && evaporatedmilk >= 1 && b_read >= 1)
+			{
+				std::cout << "\n" << "\t" << "====Total Item Purchased=======" << std::endl;
+					std::cout << "\n" << "\t" << bakedbeans << "x" << " BAKED BEANS.";
+					std::cout << "\n" << "\t" << pop_corn << "x" << " POPCORN.";
+					std::cout << "\n" << "\t" << evaporatedmilk << "x" << " EVAPORATED MILK.";
+					std::cout << "\n" << "\t" << b_read << "x" << " BREAD.";
 
-			int subtotal(bakedbeans + pop_corn + evaporatedmilk + b_read);
-			std::cout << "\n" << "\t" << "Total Quantity of Item purchased :" << subtotal << " Items" << std::endl;
+					totalCost = (bakedbeans + pop_corn + evaporatedmilk + b_read);
+					std::cout << "\n" << "\t" << "Total amount :" << totalCost << std::endl;
 
-			const double vat{ 0.20 };
-			const double salesTax(subtotal * vat);
+					vat_amount = totalCost * vat;
 
-			std::cout << "\n" << "\t" << "Sales VAT: " << salesTax << std::endl;
-
-			std::cout << "\n" << "\t" << "Total cost: " << ((baked_beans * bakedbeans) + (popcorn * pop_corn) + (evaporated_milk * evaporatedmilk) + (bread * b_read) + salesTax) << std::endl;
-
-			alphabet = true;
+					finalCost = ((baked_beans * bakedbeans) + (popcorn * pop_corn) + (evaporated_milk * evaporatedmilk) + (bread * b_read) + vat_amount);
+				    std::cout << "\n" << "\t" << "Sales VAT: " << vat_amount << std::endl;
+					std::cout << "\n" << "\t" << "Total cost: " << totalCost << std::endl;
+				    //std::cout << "\n" << "\t" << "Total cost: " << ((baked_beans * bakedbeans) + (popcorn * pop_corn) + (evaporated_milk * evaporatedmilk) + (bread * b_read) + salesTax) << std::endl;
+					std::cout << std::endl;
+				alphabet = true;
+			}
+			else
+			{
+				std::cin.clear();
+				std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+				std::cout << "\n" << "\t" << "Enter a number not less than 0 to process purchase......";
+			}
 		}
-		
-		else 
+		else
 		{
 			std::cin.clear();
 			std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 			std::cout << "\n" << "\t" << "Invalid! Please Use only Numeric Value! ";
-			
 		}
-	} 
+	}while(!(alphabet));
+	return 0;
+ } 
 
-     return 0;
-}
+ void write_to_file()
+ {
+	 std::ofstream reciept{ "CheckoutSystem.txt", std::ofstream::out};
+	 reciept <<"\t"<< std::setiosflags(std::ios::left) << std::setw(15) << "*******SHOP RECIEPT**************" << std::endl;
+	 reciept <<"\t"<< std::setiosflags(std::ios::right) <<std::setw(15)  <<"ADS SUPERMARKET" << std::endl;
+	 reciept <<"\t"<< std::setiosflags(std::ios::right) <<std::setw(17)  <<"10,Cardlane,London. SW19 4UD " << std::endl;
+	 reciept <<"\t"<< std::setiosflags(std::ios::left)  <<std::setw(17)  <<"Tel :01483-220494 " << std::endl;
+	 reciept <<"\t"<< std::setiosflags(std::ios::left)  <<std::setw(14)  <<"RECIEPT: 01654" << std::endl;
+	 reciept <<"\t"<< std::setiosflags(std::ios::left)  <<std::setw(17)  <<"DATE: 15/05/2023   " << std::endl;
+	 reciept <<"\t"<< std::setiosflags(std::ios::left)  <<std::setw(17)  <<"CASHIER: JOHN DOE  " << std::endl;
+	 reciept <<"\t"<< std::setiosflags(std::ios::left)  <<std::setw(15) <<"----------------------------------"  << std::endl;
+	 reciept <<"\t"<< std::setiosflags(std::ios::left)  <<std::setfill(' ')  <<std::setw(1) << "NAME:" << std::setw(28) << shoppers_name << std::endl;
+	 reciept <<"\t"<< std::setiosflags(std::ios::left)  <<std::setfill(' ')  <<std::setw(6) << "ADDRESS:" << std::setw(28) << shoppers_address << std::endl;
+	 reciept <<"\t"<< std::setiosflags(std::ios::left)  <<std::setfill(' ')  <<std::setw(6) << "POSTCODE:" << std::setw(24) << postcode << std::endl;
+	 reciept <<"\t"<< std::setiosflags(std::ios::left)  <<std::setfill(' ')  <<std::setw(6) << "CREDIT CARD No:" << std::setw(18) << creditCardNumber << std::endl;
+	 reciept <<"\t"<< std::setiosflags(std::ios::left)  <<std::setfill(' ')  <<std::setw(6) << "Valid  \n";
+	 reciept <<"\t"<< std::setiosflags(std::ios::left)  <<std::setfill(' ')  <<std::setw(6) << "Credit Card Type: ";
+	 reciept.write(types, strlen(types));
+	 reciept <<"\n"<<"\t"<< std::setiosflags(std::ios::left)  <<std::setfill(' ')  <<std::setw(15) << "Credit Card Exp Date:" << std::setw(12) << card_Expiry_date <<"\n";
+	 reciept <<"\t"<< std::setiosflags(std::ios::left)  <<std::setfill(' ')  <<std::setw(15) << "Credit Card Secret Code:"    << std::setw(9) << card_secret_code <<"\n";
+	 reciept <<"\t"<< std::setiosflags(std::ios::left) << std::setw(15) << "----Total Item Purchased-----------" << std::endl;
+	 reciept <<"\t"<< std::setiosflags(std::ios::left) << std::setfill(' ')  <<std::setw(1) << bakedbeans << "x" << " BAKED BEANS."<< std::setw(19) <<(baked_beans * bakedbeans)<<std::endl;
+	 reciept <<"\t"<< std::setiosflags(std::ios::left) << std::setfill(' ')  <<std::setw(1) << pop_corn << "x" << " POPCORN."<< std::setw(23) << (popcorn * pop_corn)<<std::endl;
+	 reciept <<"\t"<< std::setiosflags(std::ios::left) << std::setfill(' ')  <<std::setw(1) << evaporatedmilk << "x" << " EVAPORATED MILK."<< std::setw(15) << (evaporated_milk * evaporatedmilk) <<std::endl;
+	 reciept <<"\t"<< std::setiosflags(std::ios::left) << std::setfill(' ')  <<std::setw(1) << b_read << "x" << " BREAD."<< std::setw(25) << (bread * b_read) << std::endl;;
+	 reciept <<"\t"<< std::setiosflags(std::ios::left) << std::setw(15) << "-----------------------------------" <<std::endl;
+	 reciept <<"\t"<< std::setiosflags(std::ios::left) << std::setfill(' ')  <<std::setw(1) << "TOTAL COST:" <<std::setw(23) << totalCost << std::endl;
+	 //reciept << "\n" << "\t" << "Total Amount:"<< (bakedbeans + pop_corn + evaporatedmilk + b_read) <<std::endl;
+	 reciept <<"\t"<< std::setiosflags(std::ios::left) << std::setfill(' ')  <<std::setw(1) << "SALES VAT "<<vat<<":" << std::setw(20) << vat_amount << std::endl;
+	 //reciept << "\n" << "\t" << "Total cost: " << totalCost << std::endl;
+	 reciept <<"\t"<< std::setiosflags(std::ios::left) << std::setfill(' ')  <<std::setw(1) << "FINAL COST:"<< std::setw(23) << finalCost << std::endl;
+	 //reciept << "\n" << "\t" << "Total cost: " << ((baked_beans * bakedbeans) + (popcorn * pop_corn) + (evaporated_milk * evaporatedmilk) + (bread * b_read) + vat_amount) << std::endl;
+	 reciept <<"\t"<< std::setiosflags(std::ios::left) << std::setw(1) << "-----------------------------------"<<std::endl;
+	 reciept << "\t""\t" <<       "  THANK YOU" << std::endl;
+	 reciept << "\t" "\t" <<      "HAVE A NICE DAY" << std::endl;
+
+
+	 
+	 reciept.close();
+	 if (!reciept)
+	 {
+		 std::cout << "Error! File cannot be open" << std::endl;
+	 }
+ }
+
+ int read_from_file()
+ {
+	 std::string CheckoutSystem = "CheckoutSystem.txt";
+	 std::ifstream file;
+	 file.open(CheckoutSystem);
+
+	 if (file.is_open())
+	 {
+		 std::string line;
+		 while (std::getline(file, line))
+		 {
+			 std::cout << line << std::endl;
+		 }
+		 file.close();
+	 }
+	 else
+	 {
+		 std::cout << "Unable to open file " << CheckoutSystem << std::endl;
+	 }
+	 return 0;
+
+ }
 };
 
 
@@ -391,15 +477,16 @@ int main(int arg, char** argv)
 	//sys.get_customer_name();
 	//sys.get_customer_address();
 	//std::string post_code = "SW15 4JD";
-	//sys.isValidPostcode(post_code);
-	//sys.prompt_for_payment();
+	//sys.isValidPostcode();
+	sys.prompt_for_payment();
 	//std::string card_ex_date = "11/12/2023";
-	//sys.isValid_card_expiry_date(card_ex_date);
+	sys.isValid_card_expiry_date();
 	//std::string card_sec_code = "234";
-	//sys.isValidcardSecret_code(card_sec_code);
-	sys.list_of_items();
+	//sys.isValidcardSecret_code();
+	//sys.list_of_items();
     sys.Calculate_item_quantity();
+	sys.write_to_file();
+	sys.read_from_file();
 
-	return 0;
-	
+	return 0;	
 }

@@ -4,16 +4,67 @@
     <SFA>
       <FILEPATH>C:\SD2CW\softwareDev2\src\</FILEPATH>
       <FILENAME>main.cpp</FILENAME>
-      <LINE>384</LINE>
+      <LINE>470</LINE>
       <COLUMN>0</COLUMN>
     </SFA>
     <DEFECTCODE>26495</DEFECTCODE>
     <DESCRIPTION>Variable 'Checkout_sys::types' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
     <FUNCTION>Checkout_sys::{ctor}</FUNCTION>
     <DECORATED>??0Checkout_sys@@QEAA@XZ</DECORATED>
-    <FUNCLINE>384</FUNCLINE>
+    <FUNCLINE>470</FUNCLINE>
     <ADDITIONALINFO>
       <targetSymbol>Checkout_sys::types</targetSymbol>
+    </ADDITIONALINFO>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>C:\SD2CW\softwareDev2\src\</FILEPATH>
+      <FILENAME>main.cpp</FILENAME>
+      <LINE>470</LINE>
+      <COLUMN>0</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'Checkout_sys::vat_amount' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>Checkout_sys::{ctor}</FUNCTION>
+    <DECORATED>??0Checkout_sys@@QEAA@XZ</DECORATED>
+    <FUNCLINE>470</FUNCLINE>
+    <ADDITIONALINFO>
+      <targetSymbol>Checkout_sys::vat_amount</targetSymbol>
+    </ADDITIONALINFO>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>C:\SD2CW\softwareDev2\src\</FILEPATH>
+      <FILENAME>main.cpp</FILENAME>
+      <LINE>470</LINE>
+      <COLUMN>0</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'Checkout_sys::totalCost' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>Checkout_sys::{ctor}</FUNCTION>
+    <DECORATED>??0Checkout_sys@@QEAA@XZ</DECORATED>
+    <FUNCLINE>470</FUNCLINE>
+    <ADDITIONALINFO>
+      <targetSymbol>Checkout_sys::totalCost</targetSymbol>
+    </ADDITIONALINFO>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>C:\SD2CW\softwareDev2\src\</FILEPATH>
+      <FILENAME>main.cpp</FILENAME>
+      <LINE>470</LINE>
+      <COLUMN>0</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'Checkout_sys::finalCost' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>Checkout_sys::{ctor}</FUNCTION>
+    <DECORATED>??0Checkout_sys@@QEAA@XZ</DECORATED>
+    <FUNCLINE>470</FUNCLINE>
+    <ADDITIONALINFO>
+      <targetSymbol>Checkout_sys::finalCost</targetSymbol>
     </ADDITIONALINFO>
     <PATH></PATH>
   </DEFECT>

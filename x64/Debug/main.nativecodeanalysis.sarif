@@ -16,9 +16,9 @@
                   "uri": "file:///C:/SD2CW/softwareDev2/src/main.cpp"
                 },
                 "region": {
-                  "startLine": 384,
+                  "startLine": 470,
                   "startColumn": 1,
-                  "endLine": 384,
+                  "endLine": 470,
                   "endColumn": 1
                 }
               },
@@ -33,6 +33,99 @@
           ],
           "properties": {
             "targetSymbol": "Checkout_sys::types"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "Variable 'Checkout_sys::vat_amount' is uninitialized. Always initialize a member variable (type.6)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/SD2CW/softwareDev2/src/main.cpp"
+                },
+                "region": {
+                  "startLine": 470,
+                  "startColumn": 1,
+                  "endLine": 470,
+                  "endColumn": 1
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Checkout_sys::{ctor}",
+                  "decoratedName": "??0Checkout_sys@@QEAA@XZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "Checkout_sys::vat_amount"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "Variable 'Checkout_sys::totalCost' is uninitialized. Always initialize a member variable (type.6)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/SD2CW/softwareDev2/src/main.cpp"
+                },
+                "region": {
+                  "startLine": 470,
+                  "startColumn": 1,
+                  "endLine": 470,
+                  "endColumn": 1
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Checkout_sys::{ctor}",
+                  "decoratedName": "??0Checkout_sys@@QEAA@XZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "Checkout_sys::totalCost"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "Variable 'Checkout_sys::finalCost' is uninitialized. Always initialize a member variable (type.6)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/SD2CW/softwareDev2/src/main.cpp"
+                },
+                "region": {
+                  "startLine": 470,
+                  "startColumn": 1,
+                  "endLine": 470,
+                  "endColumn": 1
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Checkout_sys::{ctor}",
+                  "decoratedName": "??0Checkout_sys@@QEAA@XZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "Checkout_sys::finalCost"
           }
         }
       ],
@@ -59,7 +152,7 @@
             "resultFile"
           ],
           "hashes": {
-            "sha-256": "8fdfeb68a76fe43017244db79a40efc51f5240a63f53a80682199fa41c6e9b76"
+            "sha-256": "eb55ca8f7fea2727f270ec73c9f17aa02dc96c5aafb73c635fb15fb804f8961f"
           }
         },
         {

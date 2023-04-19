@@ -1,0 +1,28 @@
+	*******SHOP RECIEPT**************
+	ADS SUPERMARKET
+	10,Cardlane,London. SW19 4UD 
+	Tel :01483-220494 
+	RECIEPT: 01654
+	DATE: 15/05/2023   
+	CASHIER: JOHN DOE  
+	----------------------------------
+	NAME:                            
+	ADDRESS:                            
+	POSTCODE:                        
+	CREDIT CARD No:  4126274068248915
+	Valid  
+	Credit Card Type: VISA
+	Credit Card Exp Date:    10/07/28
+	Credit Card Secret Code:         
+	----Total Item Purchased-----------
+	4x BAKED BEANS.                4.8
+	5x POPCORN.                      4
+	4x EVAPORATED MILK.            4.6
+	5x BREAD.                     11.7
+	-----------------------------------
+	TOTAL COST:                     18
+	SALES VAT 0.2:                 3.6
+	FINAL COST:                   28.7
+	-----------------------------------
+		  THANK YOU
+		HAVE A NICE DAY
