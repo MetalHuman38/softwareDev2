@@ -1,6 +1,6 @@
 ﻿  main.cpp
-C:\SD2CW\softwareDev2\src\main.cpp(43): warning C4305: 'initializing': truncation from 'double' to 'float'
-C:\SD2CW\softwareDev2\src\main.cpp(374,58): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-C:\SD2CW\softwareDev2\src\main.cpp(379,125): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\SD2CW\softwareDev2\src\main.cpp(49): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\SD2CW\softwareDev2\src\main.cpp(369,58): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+C:\SD2CW\softwareDev2\src\main.cpp(374,125): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
   softwareDev2.vcxproj -> C:\SD2CW\softwareDev2\x64\Debug\softwareDev2.exe
-C:\SD2CW\softwareDev2\src\main.cpp(470): warning C26495: Variable 'Checkout_sys::types' is uninitialized. Always initialize a member variable (type.6).
+C:\SD2CW\softwareDev2\src\main.cpp(458): warning C26495: Variable 'Checkout_sys::types' is uninitialized. Always initialize a member variable (type.6).

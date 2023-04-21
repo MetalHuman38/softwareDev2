@@ -1,0 +1,28 @@
+	*******SHOP RECIEPT**************
+	ADS SUPERMARKET
+	10,Cardlane,London. SW19 4UD 
+	Tel :01483-220494 
+	RECIEPT: 01654
+	DATE: 15/05/2023   
+	CASHIER: JOHN DOE  
+	----------------------------------
+	NAME:         BABATUNDE KALEJAIYE
+	ADDRESS:     18 LOWE JUNCTION LONDON
+	POSTCODE:                SW15 4JD
+	CREDIT CARD No:  4485132009007763
+	Valid  
+	Credit Card Type: VISA
+	Credit Card Exp Date:      8/9/24
+	Credit Card Secret Code:      166
+	----Total Item Purchased-----------
+	5x BAKED BEANS.                  6
+	6x POPCORN.                    4.8
+	4x EVAPORATED MILK.            4.6
+	5x BREAD.                     11.7
+	-----------------------------------
+	TOTAL COST:                     20
+	SALES VAT 0.2:                   4
+	FINAL COST:                   31.1
+	-----------------------------------
+		  THANK YOU
+		HAVE A NICE DAY

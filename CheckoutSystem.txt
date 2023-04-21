@@ -1,19 +1,20 @@
 	*******SHOP RECIEPT**************
 	ADS SUPERMARKET
-	10,Cardlane,London. SW19 4UD 
+	10,CARDLANE,LONDON. SW19 4UD 
 	Tel :01483-220494 
 	RECIEPT: 01654
 	DATE: 15/05/2023   
 	CASHIER: JOHN DOE  
 	----------------------------------
-	NAME:                            
-	ADDRESS:                            
-	POSTCODE:                        
-	CREDIT CARD No:  4126274068248915
+	NAME:         BABATUNDE KALEJAIYE
+	ADDRESS:        30 UBRELO AVE LONDON
+	POSTCODE:                SE11 5LU
+	CREDIT CARD No:   374967339821546
 	Valid  
-	Credit Card Type: VISA
-	Credit Card Exp Date:    10/07/28
-	Credit Card Secret Code:         
+	Credit Card Type: 
+	Invalid Card
+	CREDIT CARD EXP DATE:    03/04/26
+	CREDIT CARD SECRET CODE:      166
 	----Total Item Purchased-----------
 	4x BAKED BEANS.                4.8
 	5x POPCORN.                      4
