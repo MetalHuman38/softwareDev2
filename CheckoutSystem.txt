@@ -1,4 +1,4 @@
-1722.474.4926.96
+2126.575.3131.88
 	*******SHOP RECEIPT**************
 	ADS SUPERMARKET
 	10,CARD LANE,LONDON. SW19 4UD 
@@ -7,24 +7,24 @@
 	DATE:                15/05/2023   
 	CASHIER:             JOHN DOE  
 	------------------------------------
-	NAME:            BABATUNDE KALEJAIYE
-	ADDRESS:     10 LOWE AVENUE LONDON
-	POSTCODE:                 SW15 4JD
-	CREDIT CARD No:     6011270120511327
+	NAME:            TUNDE KALEJAIYE
+	ADDRESS:     203 HARVEY STREET LONDON
+	POSTCODE:                 SE11 5LU
+	CREDIT CARD No:     5497104154293350
 	Valid
-	Credit Card Type:      DISCOVERY CARD
-	CREDIT CARD EXP DATE:       02/03/25
+	Credit Card Type:      MASTERCARD
+	CREDIT CARD EXP DATE:       04/06/27
 	CREDIT CARD SECRET CODE:         345
 	----Total Item Purchased-------------
 	5 BAKED BEANS                  £6.00
-	4 POPCORN                      £3.20
-	5 EVAPORATED MILK              £6.25
+	6 POPCORN                      £4.80
+	7 EVAPORATED MILK              £8.75
 	3 BREAD                        £7.02
 	-------------------------------------
-	TOTAL QUANTITY:                   17
-	TOTAL COST:                   £22.47
-	SALES VAT 0.20:                £4.49
-	FINAL COST:                   £26.96
+	TOTAL QUANTITY:                   21
+	TOTAL COST:                   £26.57
+	SALES VAT 0.20:                £5.31
+	FINAL COST:                   £31.88
 	-------------------------------------
 		  THANK YOU
 		HAVE A NICE DAY
